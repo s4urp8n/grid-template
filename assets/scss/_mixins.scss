@@ -1,0 +1,19 @@
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  text-decoration: none;
+  box-shadow: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+@mixin disableSelection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,103 @@
+@import "vars";
+@import "mixins";
+@import "animate";
+
+html {
+  @include reset;
+  min-height: 100vh;
+  text-align: center;
+}
+
+body {
+  @include reset;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  max-width: $bodyMaxWidth;
+  margin: auto;
+  text-align: left;
+  padding: 40px;
+}
+
+.header {
+  @include reset;
+  background: green;
+  padding: 20px;
+  .header-bar {
+    @include reset;
+    @include disableSelection;
+    background: blue;
+    padding: 20px;
+    display: none;
+    .header-bar__label {
+      display: block;
+      cursor: pointer;
+      color: #fff;
+      .header-bar__label__close,
+      .header-bar__label__open {
+        width: 35px;
+        height: 35px;
+        padding: 10px;
+      }
+      .header-bar__label__close {
+        display: none;
+      }
+      .header-bar__label__open {
+        display: block;
+      }
+    }
+  }
+  .header-bar__checkbox {
+    display: none;
+    &:checked {
+      & ~ .header-content {
+        display: block;
+      }
+      & ~ .header-bar {
+        & .header-bar__label {
+          & .header-bar__label__close {
+            display: block;
+          }
+          & .header-bar__label__open {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  @include reset;
+  background: orange;
+  flex: 1;
+  padding: 20px;
+}
+
+.footer {
+  @include reset;
+  background: lime;
+  padding: 20px;
+}
+
+@media(max-width: $mobileMenuBreakpoint) {
+  body {
+    padding: 0;
+  }
+  .header {
+    padding: 0;
+    .header-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .header-bar__content {
+        flex: 1;
+      }
+    }
+    .header-content {
+      display: none;
+      padding: 20px;
+    }
+  }
+}
