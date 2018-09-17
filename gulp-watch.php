@@ -1,0 +1,2 @@
+<?php
+passthru('gulp watch');

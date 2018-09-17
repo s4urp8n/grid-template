@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/scss/grid.css">
-    <script src="/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700&amp;subset=cyrillic-ext,latin-ext"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <?php
+    echo file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'resources\views\assets.blade.php');
+    ?>
 </head>
 <body>
 <div class="header">
@@ -17,8 +21,8 @@
             LOGO OR SOMETHING
         </div>
         <label for="header-bar__checkbox" class="header-bar__label">
-            <img src="/assets/icons/menu.svg" class="header-bar__label__open animated faster flip"/>
-            <img src="/assets/icons/close.svg" class="header-bar__label__close animated faster rotateIn"/>
+            <img src="/images/menu.svg" class="header-bar__label__open animated faster flip"/>
+            <img src="/images/close.svg" class="header-bar__label__close animated faster rotateIn"/>
         </label>
     </div>
     <div class="header-content">

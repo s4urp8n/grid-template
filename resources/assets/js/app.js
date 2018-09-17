@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
+    $('html').removeClass('no-js');
+
     $('.header-bar__label').on('click', function () {
         $('.header-content').slideToggle(300, function () {
-            $('.header-content').removeAttr('style');
+            if ($('.header-content').is(':hidden')) {
+                $('.header-content').removeAttr('style');
+            }
         });
     });
 

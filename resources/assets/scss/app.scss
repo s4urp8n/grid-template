@@ -18,6 +18,8 @@ body {
   margin: auto;
   text-align: left;
   padding: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
 }
 
 .header {
@@ -51,9 +53,9 @@ body {
   .header-bar__checkbox {
     display: none;
     &:checked {
-      & ~ .header-content {
-        display: block;
-      }
+      //& ~ .header-content {
+      //  display: block;
+      //}
       & ~ .header-bar {
         & .header-bar__label {
           & .header-bar__label__close {
@@ -62,6 +64,19 @@ body {
           & .header-bar__label__open {
             display: none;
           }
+        }
+      }
+    }
+  }
+}
+
+.no-js {
+  .header {
+    .header-bar__checkbox {
+      display: none;
+      &:checked {
+        & ~ .header-content {
+          display: block;
         }
       }
     }
