@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <?php
-    echo file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'resources\views\assets.blade.php');
+    echo file_get_contents(str_replace('/', DIRECTORY_SEPARATOR, __DIR__ . '/../resources/views/assets.blade.php'));
     ?>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <input type="checkbox" id='header-bar__checkbox' class='header-bar__checkbox'>
     <div class="header-bar">
         <div class="header-bar__content">
-            LOGO OR SOMETHING
+            Модельесса
         </div>
         <label for="header-bar__checkbox" class="header-bar__label">
             <img src="/images/menu.svg" class="header-bar__label__open animated faster flip"/>
