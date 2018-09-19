@@ -1,11 +1,18 @@
 @import "vars";
 @import "mixins";
+@import "normalize";
 @import "animate";
 
 html {
   @include reset;
   min-height: 100vh;
   text-align: center;
+  background: #fffaf4;
+  padding: 40px 40px 40px 40px;
+  background-image: url('/images/bgg.png'), url('/images/full-bloom.png');
+  background-position: bottom center, left top;
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed, scroll;
 }
 
 body {
@@ -13,25 +20,43 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  position: relative;
   width: 100%;
   max-width: $bodyMaxWidth;
-  margin: auto;
+  margin: 40px auto;
   text-align: left;
-  padding: 40px;
+  padding: 20px;
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
+  box-shadow: 0 3px 51px -5px rgba(82, 82, 82, .2);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .header {
   @include reset;
-  background: green;
   padding: 20px;
+  border-bottom: 1px solid #eee;
   .header-bar {
     @include reset;
     @include disableSelection;
-    background: blue;
     padding: 20px;
     display: none;
+    background: #ff9e2b;
+    .header-bar__logo {
+      @include reset;
+      @include disableSelection;
+      font-family: 'Lobster', 'Roboto', sans-serif;
+      color: #fff;
+      font-size: 30px;
+      display: block;
+      &__slogan {
+        @include reset;
+        @include disableSelection;
+        display: block;
+        color: #eee;
+        font-size: 12px;
+      }
+    }
     .header-bar__label {
       display: block;
       cursor: pointer;
@@ -53,9 +78,6 @@ body {
   .header-bar__checkbox {
     display: none;
     &:checked {
-      //& ~ .header-content {
-      //  display: block;
-      //}
       & ~ .header-bar {
         & .header-bar__label {
           & .header-bar__label__close {
@@ -83,22 +105,188 @@ body {
   }
 }
 
+.header-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  align-items: start;
+  align-content: start;
+  justify-items: start;
+  justify-content: start;
+  .header-logo {
+    @include reset;
+    max-width: 260px;
+    text-decoration: none;
+    justify-self: start;
+    .title {
+      @include reset;
+      display: block;
+      font-family: 'Lobster', sans-serif;
+      color: #000;
+      font-size: 48px;
+      text-align: center;
+    }
+    .slogan {
+      @include reset;
+      color: #000;
+      font-size: 11px;
+      display: block;
+      text-align: center;
+    }
+  }
+  .header-contacts {
+    @include reset;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    .phone {
+      @include reset;
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: right;
+      color: #000;
+    }
+    .street {
+      @include reset;
+      color: #000;
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+  }
+  .header-search {
+    @include reset;
+    text-align: right;
+    display: grid;
+    grid-auto-rows: 2fr 1fr;
+    grid-auto-flow: column;
+    justify-self: center;
+    align-self: center;
+    input {
+      @include reset;
+      display: block;
+      padding: 5px;
+      border: 1px solid #000;
+    }
+    button {
+      @include reset;
+      display: block;
+      cursor: pointer;
+      min-width: 50px;
+      max-width: 90px;
+      border: 1px solid #000;
+      border-left: none;
+    }
+  }
+  .header-menu {
+    @include reset;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 100%;
+    min-width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    margin-top: 10px;
+    a {
+      @include reset;
+      display: block;
+      text-align: center;
+      width: 100%;
+      text-decoration: none;
+      color: #000;
+      white-space: nowrap;
+      font-weight: bold;
+      padding: 5px 10px;
+      overflow: hidden;
+      &:hover {
+        background: #FFE4C4;
+      }
+      &.active,
+      &.active:hover {
+        background: #ff9e2b;
+      }
+    }
+  }
+}
+
 .content {
   @include reset;
-  background: orange;
   flex: 1;
   padding: 20px;
 }
 
 .footer {
   @include reset;
-  background: lime;
-  padding: 20px;
+  padding: 40px 20px 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  border-top: 1px solid #eee;
+  &-copy {
+    @include reset;
+  }
+  &-menu {
+    @include reset;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: start;
+    align-items: start;
+    a {
+      @include reset;
+      display: block;
+      text-align: left;
+      overflow: hidden;
+      text-decoration: none;
+      color: #000;
+      white-space: nowrap;
+      font-weight: bold;
+      padding: 5px 10px;
+      &:hover {
+        background: #FFE4C4;
+      }
+      &.active,
+      &.active:hover {
+        background: #ff9e2b;
+      }
+    }
+  }
+  &-social {
+    @include reset;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: end;
+    align-items: start;
+    a {
+      @include reset;
+      display: block;
+      transition: all 0.05s ease-in-out;
+      img {
+        @include reset;
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
 }
 
 @media(max-width: $mobileMenuBreakpoint) {
+  html {
+    padding: 0;
+  }
   body {
     padding: 0;
+    margin: 0;
   }
   .header {
     padding: 0;
@@ -113,6 +301,80 @@ body {
     .header-content {
       display: none;
       padding: 20px;
+      .header-main {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        .header-logo {
+          display: none;
+        }
+        .header-contacts {
+          display: none;
+        }
+        .header-search {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          input {
+            width: 100%;
+          }
+          button {
+
+          }
+        }
+        .header-menu {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: auto;
+          grid-auto-rows: min-content;
+          grid-column-start: auto;
+          grid-column-end: auto;
+          grid-auto-flow: row;
+          justify-items: start;
+          align-items: start;
+          align-content: start;
+          justify-content: start;
+        }
+      }
+    }
+  }
+
+  .footer {
+    grid-template-columns: 2fr 1fr;
+    &-copy {
+    }
+    &-menu {
+      display: none;
+    }
+    &-social {
+      a {
+        width: 50px;
+      }
+    }
+  }
+}
+
+@media(max-width: 500px) {
+  .header {
+    .header-content {
+      .header-main {
+        .header-logo {
+        }
+        .header-contacts {
+        }
+        .header-search {
+        }
+        .header-menu {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    &-social {
+      order: -1;
+      margin-bottom: 40px;
     }
   }
 }

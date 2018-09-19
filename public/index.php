@@ -18,7 +18,9 @@
     <input type="checkbox" id='header-bar__checkbox' class='header-bar__checkbox'>
     <div class="header-bar">
         <div class="header-bar__content">
-            Модельесса
+            <a href="/" class="header-bar__logo">
+                Модельесса
+            </a>
         </div>
         <label for="header-bar__checkbox" class="header-bar__label">
             <img src="/images/menu.svg" class="header-bar__label__open animated faster flip"/>
@@ -26,22 +28,98 @@
         </label>
     </div>
     <div class="header-content">
-        HEADER<br>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ea eum eveniet explicabo, ipsa laboriosam
-        magni modi nemo, nulla odio perferendis provident quibusdam reiciendis sapiente tempora tempore voluptates
-        voluptatibus?
+        <div class="header-main">
+            <a class="header-logo" href="/">
+                <span class="title">Модельесса</span>
+                <span class="slogan">Изготовление карнавальных, сценических костюмов для взрослых и детей</span>
+            </a>
+            <form method="get" action="/" enctype="multipart/form-data" class="header-search">
+                <input name="search" type="text" value="">
+                <button type="submit" class="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+            <div class="header-contacts">
+                <a class="phone" href="tel:+7 (918) 140 45 04">+7 918 140 45 04</a>
+                <a class="phone" href="tel:(861) 235 71 67">+7 861 235 71 67</a>
+                <a href="/" class="street">Краснодар, Адыгейская набережная, 264</a>
+
+            </div>
+
+            <div class="header-menu">
+
+                <a class="active" href="/">
+                    Каталог
+                </a>
+                <a href="#">
+                    О компании
+                </a>
+                <a href="#">
+                    Контакты
+                </a>
+                <a href="#">
+                    Доставка
+                </a>
+                <a href="#">
+                    Оптом
+                </a>
+                <a href="#">
+                    <i class="fa fa-sign-in-alt"></i>
+                    Войти
+                </a>
+                <a href="#">
+                    <i class="fa fa-shopping-cart"><i class="cart-badge">99</i></i>
+                    Корзина
+                </a>
+
+            </div>
+        </div>
     </div>
 </div>
 <div class="content">
-    CONTENT<br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis delectus laborum maiores quisquam quo
-    velit vitae! Ab at consequuntur debitis deserunt distinctio ipsa, iusto minima natus quas, soluta veniam!
+
 </div>
 <div class="footer">
-    FOOTER<br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur cum, deleniti dolores, earum error
-    eveniet explicabo facilis nisi officia omnis quidem ratione, recusandae reprehenderit repudiandae soluta tenetur
-    ullam vitae?
+    <div class="footer-copy">
+        © 2013—2018 «Модельесса»
+        <br>
+        <br>
+        Все права защищены.
+        <br>
+        При использовании материалов с сайта, ссылка на источник обязательна.
+    </div>
+    <div class="footer-menu">
+        <a class="active" href="/">
+            Каталог
+        </a>
+        <a href="/">
+            О компании
+        </a>
+        <a href="/">
+            Контакты
+        </a>
+        <a href="/">
+            Доставка
+        </a>
+        <a href="/">
+            Оптом
+        </a>
+
+    </div>
+    <div class="footer-social">
+        <a href="#">
+            <img src="/images/fb.png" width="128px" height="128px" alt="">
+        </a>
+        <a href="#">
+            <img src="/images/ig.png" width="128px" height="128px" alt="">
+        </a>
+        <a href="#">
+            <img src="/images/vk.png" width="128px" height="128px" alt="">
+        </a>
+        <a href="#">
+            <img src="/images/ok.png" width="128px" height="128px" alt="">
+        </a>
+    </div>
 </div>
 </body>
 </html>
