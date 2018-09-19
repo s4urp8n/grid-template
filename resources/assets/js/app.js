@@ -10,4 +10,6 @@ $(document).ready(function () {
         });
     });
 
+    $('.content').html('width=' + $(window).width() + "<br>height=" + $(window).height());
+
 });
