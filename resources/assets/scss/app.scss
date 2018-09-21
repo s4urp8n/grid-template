@@ -9,7 +9,7 @@ html {
   text-align: center;
   background: #fffaf4;
   padding: 40px 40px 40px 40px;
-  background-image: url('/images/bgg.png'), url('/images/full-bloom.png');
+  background-image: url('/images/bg.png'), url('/images/full-bloom.png');
   background-position: bottom center, left top;
   background-repeat: no-repeat, repeat;
   background-attachment: fixed, scroll;
@@ -41,7 +41,7 @@ body {
     @include disableSelection;
     padding: 20px;
     display: none;
-    background: #ff9e2b;
+    background: $primaryColor;
     .header-bar__logo {
       @include reset;
       @include disableSelection;
@@ -201,14 +201,35 @@ body {
       color: #000;
       white-space: nowrap;
       font-weight: bold;
-      padding: 5px 10px;
+      padding: 10px;
       overflow: hidden;
       &:hover {
         background: #FFE4C4;
       }
       &.active,
       &.active:hover {
-        background: #ff9e2b;
+        background: $primaryColor;
+      }
+      i {
+        &.fa-shopping-cart {
+          position: relative;
+          margin-right: 5px;
+          .cart-badge {
+            position: absolute;
+            background: red;
+            color: #FFF;
+            border-radius: 6px;
+            padding: 3px;
+            top: -10px;
+            left: 7px;
+            font-size: 12px;
+            font-style: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 15px;
+          }
+        }
       }
     }
   }
@@ -228,13 +249,13 @@ body {
   border-top: 1px solid #eee;
   &-copy {
     @include reset;
+    font-size: 85%;
   }
   &-menu {
     @include reset;
     padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
     justify-items: start;
     align-items: start;
     a {
@@ -246,13 +267,13 @@ body {
       color: #000;
       white-space: nowrap;
       font-weight: bold;
-      padding: 5px 10px;
+      padding: 10px;
       &:hover {
         background: #FFE4C4;
       }
       &.active,
       &.active:hover {
-        background: #ff9e2b;
+        background: $primaryColor;
       }
     }
   }
@@ -378,3 +399,29 @@ body {
     }
   }
 }
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 20px;
+  .dropdown-select {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 20px 0;
+  }
+}
+
+@media(max-width: $mobileMenuBreakpoint) {
+  .catalog {
+    grid-template-columns: 1fr;
+    .dropdown-select {
+      display: block;
+    }
+    .dropdown-container {
+      display: none;
+    }
+  }
+}
+
+@import "menu";

@@ -1,0 +1,64 @@
+@mixin linkStyle {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  background: #eee;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #000;
+  &:hover {
+    background: $hoverColor;
+  }
+  &.active,
+  &.active:hover {
+    background: $primaryColor;
+    color: #fff;
+  }
+}
+
+.dropdown-container {
+  display: block;
+  &__link {
+    @include linkStyle;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  &__dropdown {
+    display: block;
+    margin-bottom: 5px;
+    &__checkbox {
+      display: none;
+    }
+    &__label {
+      @include linkStyle;
+      font-weight: bold;
+      position: relative;
+      &:after {
+        position: absolute;
+        right: 0;
+        padding-right: 10px;
+        content: '+';
+      }
+    }
+    &__content {
+      display: none;
+      &__link {
+        @include linkStyle;
+        padding-left: 20px;
+        font-size: 90%;
+        &:before {
+          content: '-';
+        }
+      }
+    }
+    &__checkbox:checked ~ &__content {
+      display: block;
+    }
+    &__checkbox:checked ~ &__label {
+      &:after {
+        content: '-';
+      }
+    }
+  }
+}
+

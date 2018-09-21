@@ -1,2 +1,5 @@
 $mobileMenuBreakpoint: 940px;
 $bodyMaxWidth: 1000px;
+$primaryColor: #ED8307;
+$hoverColor: lighten($primaryColor, 40%);
+$backgroundColor: lighten($primaryColor, 50%);

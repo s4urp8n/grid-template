@@ -42,6 +42,7 @@ gulp.task('styles', ['updateVersion'], function () {
 gulp.task('scripts', ['styles'], function () {
     return gulp.src([
         'resources/assets/js/jquery-3.3.1.min.js',
+        'resources/assets/js/jquery.backstretch.min.js',
         'resources/assets/js/app.js',
     ])
         .pipe(plumber())
